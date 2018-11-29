@@ -13,8 +13,8 @@ namespace AdventureGame
     {
         public static void ArtTitle()
         {
-            //Console.BackgroundColor = ConsoleColor.DarkBlue;
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            
+            Console.ForegroundColor = ConsoleColor.Blue;
             
             Console.Title = "ASCII Art";
             Console.WriteLine(); // breakline
@@ -22,17 +22,20 @@ namespace AdventureGame
             Console.WriteLine(); // breakline
             string title =
                 @"
-                                 ██████╗  █████╗ ███╗   ██╗████████╗    ███╗   ███╗ █████╗ ███╗   ██╗
-                                 ██╔══██╗██╔══██╗████╗  ██║╚══██╔══╝    ████╗ ████║██╔══██╗████╗  ██║
-                                 ██████╔╝███████║██╔██╗ ██║   ██║       ██╔████╔██║███████║██╔██╗ ██║
-                                 ██╔══██╗██╔══██║██║╚██╗██║   ██║       ██║╚██╔╝██║██╔══██║██║╚██╗██║
-                                 ██████╔╝██║  ██║██║ ╚████║   ██║       ██║ ╚═╝ ██║██║  ██║██║ ╚████║
-                                 ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝       ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
+                                
+                                     ██████╗ ██╗ ██╗      ██████╗  █████╗ ███╗   ███╗███████╗     ██╗
+                                    ██╔════╝████████╗    ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ███║
+                                    ██║     ╚██╔═██╔╝    ██║  ███╗███████║██╔████╔██║█████╗      ╚██║
+                                    ██║     ████████╗    ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝       ██║
+                                    ╚██████╗╚██╔═██╔╝    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗     ██║
+                                     ╚═════╝ ╚═╝ ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═╝
+                                                                 
+
                 ";
 
             Console.WriteLine(title);
             Console.WriteLine(); // breakline
-            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("                                                     Press enter to continue...");
             Console.ReadKey();
             Console.Clear();
