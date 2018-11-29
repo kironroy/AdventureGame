@@ -14,9 +14,12 @@ namespace AdventureGame
     {
         static void Main()
         {
+
+            OpeningGameScene.ArtTitle();
+
             Game.StartGame();  // class Game . operator  using Start Game method
 
-            Console.ReadKey();
+            Console.Read();
         }
     }
 }

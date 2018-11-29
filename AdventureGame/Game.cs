@@ -21,7 +21,29 @@ namespace AdventureGame
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("A roleplaying game");
             Console.WriteLine(); // breakline
-            CharacterName();
+            CharacterName(); // calling CharacterName method
+            Choice(); // calling Choice method
+        }
+
+
+        public static void Choice()
+        {
+            
+            string characterInput = " ";
+            Console.WriteLine(); // breakline
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"Hello {characterNameProper}, which path do you wanna choose: A or B?");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            characterInput = Console.ReadLine().Trim().ToUpper();
+            if (characterInput == "A")
+            {
+                Console.WriteLine("You've chosen path A!");
+            }
+            else 
+            {
+                Console.WriteLine("You've chosen path B!");
+            }
+            
         }
 
         //ask player for a name, and save it 
@@ -33,5 +55,7 @@ namespace AdventureGame
             characterNameProper = new CultureInfo("en-US").TextInfo.ToTitleCase(characterName);
             Console.WriteLine($"You chose {characterNameProper} as your name");
         }
+
+     
     }
 }
