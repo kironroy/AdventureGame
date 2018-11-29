@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Collections.Generic;
 
 // http://programmingisfun.com/learn/c-sharp-adventure-game/
 // 1. class Program
@@ -14,6 +15,7 @@ namespace AdventureGame
         //character name
         static string characterName;
         static string characterNameProper;
+        static List<string> Inventory = new List<string>(); // inventory list
 
         //ask player for a name, and save it 
         public static void CharacterName()
@@ -41,18 +43,18 @@ namespace AdventureGame
         };
 
         static string[] PartTwo = {
-            "The second floor has a black and white checkered floor the same staircase and yellow ladder to another floor\nYou must choose to go up ladder or go up the stairs\n\n*** To choose, type either A to go up the ladder, or B go out to window",
+            "The second floor has a black and white checkered floor the same staircase \nand a yellow ladder to another floor\nYou must choose to go up the ladder or use the stairs\n\n*** To choose, type either A to go up the ladder, or B go up the stairs",
             "You climb the ladder and are on the third floor\nYou find a $50 bill on the rung, awesome!", // choice A result
-            "\n\nYou choose the stairs", // choice B result
+            "\n\nYou choose the stairs, you find a useless shirt button", // choice B result
             "This place is so werid!",
             "The third floor has a International buffet, lucky you have a $50 dollar bill. \nthe buffet is only 10 bucks!",
             "Too bad you chose to the stairs, there was smell of delicious close the ladder",
-            "Anyway, your on your way to the fourth floor"
+            "Anyway, you are headed to the fourth floor"
             
             
         };
         static string[] PartThree = {
-            "Your on the fourth floor, where there is a pool and a ping pong table. \nDo wanna swim or play ping pong.\n\n*** To choose, TypeA for pool B for ping pong",
+            "Your on the fourth floor, where there is a pool and a ping pong table. \nDo wanna swim or play ping pong.\n\n*** To choose, Type A for pool B for ping pong",
             "Your in the pool, its sulfuric acid",
             "\n\nYou see there are two paddles and a ball, you gonna play alone?",
             "This place is so werid",
@@ -73,6 +75,22 @@ namespace AdventureGame
             Choice(); // calling Choice method
         }
 
+        public static void EndGame()
+        {
+            //end of game text
+
+            Console.WriteLine();
+            Console.WriteLine($" *** Congratulations {characterNameProper} *** ");
+            Console.WriteLine(); // breakline
+
+            Console.WriteLine($" *** You found some items in your journey:");
+            Console.WriteLine(); // breakline
+            foreach (string item in Inventory)
+            {
+                Console.WriteLine(" -> " + item);
+            }
+        }
+
 
         static void Choice()
         {
@@ -90,8 +108,6 @@ namespace AdventureGame
                         Console.WriteLine(PartOne[0]); // accessing first element in PartOne Array
 
                         //2)read in player's choice (a or b)
-                        Console.WriteLine(); // breakline
-                        Console.WriteLine(); // breakline
                         Console.Write("Enter your choice: ");
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
@@ -101,11 +117,13 @@ namespace AdventureGame
                         if (input == "a") // 
                         {
                             Console.WriteLine(PartOne[1]);
+                            Inventory.Add("flashlight");
 
                         }
                         else
                         {
                             Console.WriteLine(PartOne[2]);
+                            Inventory.Add("umbrella");
                         }
 
                         //4) print next part of the section
@@ -115,6 +133,7 @@ namespace AdventureGame
                         if (input == "a")
                         {
                             Console.WriteLine(PartOne[4]);
+                            Inventory.Add("snack");
 
                         }
                         else
@@ -133,8 +152,6 @@ namespace AdventureGame
                         //Part Two
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine(PartTwo[0]);
-                        Console.WriteLine(); // breakline
-                        Console.WriteLine(); // breakline
                         Console.Write("Enter your choice: ");
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
@@ -142,11 +159,13 @@ namespace AdventureGame
                         if (input == "a")
                         {
                             Console.WriteLine(PartTwo[1]);
+                            Inventory.Add("50 dollar bill");
 
                         }
                         else
                         {
                             Console.WriteLine(PartTwo[2]);
+                            Inventory.Add("shirt button");
                         }
                         Console.WriteLine(PartTwo[3]);
                         if (input == "a")
@@ -166,8 +185,6 @@ namespace AdventureGame
                         //Part Three
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine(PartThree[0]);
-                        Console.WriteLine(); // breakline
-                        Console.WriteLine(); // breakline
                         Console.Write("Enter your choice: ");
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
@@ -175,11 +192,13 @@ namespace AdventureGame
                         if (input == "a")
                         {
                             Console.WriteLine(PartThree[1]);
+                            Inventory.Add("sulfuric acid");
 
                         }
                         else
                         {
                             Console.WriteLine(PartThree[2]);
+                            Inventory.Add("ping pong paddles");
                         }
                         Console.WriteLine(PartThree[3]);
                         if (input == "a")
@@ -204,6 +223,8 @@ namespace AdventureGame
                 Console.WriteLine("Press enter to continue...");
                 Console.ReadKey();
                 Console.Clear();
+
+                
 
             }
         }

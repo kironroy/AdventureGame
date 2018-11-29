@@ -19,9 +19,10 @@ namespace AdventureGame
 
             Game.StartGame();  // class Game . operator  using Start Game method
 
+            Game.EndGame(); 
+
             EndingGameScene.EndTitle();
 
-            //Console.Read();
         }
     }
 }
