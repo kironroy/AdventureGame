@@ -27,16 +27,18 @@ namespace AdventureGame
             "You begin to climb the stairs to the next floor."
         };
         static string[] PartTwo = {
-            "Description of story part two ... and the choice A or B",
-            "... part two - what happens if A is chosen...",
-            "... part two - what happens if B is chosen...",
-            "....more story.... .",
-            "... part two, again - what happens if A is chosen...",
-            "... part two again - what happens if B is chosen...",
-            "You begin to climb the stairs to the next floor...."
+            "The second floor has a black and white checkered floor the same staircase and yellow ladder to another floor\nYou must choose to go up ladder or go up the stairs\nTo choose type either A to go up the ladder, or B go out to window",
+            "You climb the ladder and are on the third floor\nYou find a $50 bill on the rung, awesome!", // choice A result
+            "You choose the stairs", // choice B result
+            "This place is so werid!",
+            "The third floor has a International buffet, lucky you have a $50 dollar bill. \nthe buffet is only 10 bucks!",
+            "Too bad you chose to the stairs, there was smell of delicious close the ladder",
+            "Anyway, your on your way to the fourth floor"
+            
+            
         };
         static string[] PartThree = {
-            "Description of story part three... and the choice A or B",
+            "Your on the fourth floor, where there is a ",
             "... part 3 - what happens if A is chosen...",
             "... part 3 - what happens if B is chosen...",
             "....more story.... .",
@@ -86,7 +88,7 @@ namespace AdventureGame
 
                         //2)read in player's choice (a or b)
                         Console.ForegroundColor = ConsoleColor.Green;
-
+                        Console.WriteLine(); // breakline
                         Console.Write("Enter your choice: ");
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
@@ -129,6 +131,7 @@ namespace AdventureGame
 
                         Console.WriteLine(PartTwo[0]);
                         Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(); // breakline
                         Console.Write("Enter your choice: ");
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
@@ -160,6 +163,7 @@ namespace AdventureGame
                         //Part Three
                         Console.WriteLine(PartThree[0]);
                         Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(); // breakline
                         Console.Write("Enter your choice: ");
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
