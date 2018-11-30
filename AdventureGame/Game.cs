@@ -57,10 +57,10 @@ namespace AdventureGame
             "Your on the fourth floor, where there is a pool and a ping pong table. \nDo wanna swim or play ping pong.\n\n*** To choose, Type A for pool B for ping pong",
             "Your in the pool, its sulfuric acid",
             "\n\nYou see there are two paddles and a ball, you gonna play alone?",
-            "This place is so werid",
+            " ",
             "Sulfuric acid means death, YOU ARE DEAD!!!",
             "You play ping pong with an awesome babe ;)",
-            "You begin to climb the stairs to the next floor, is this the end??"
+            " "
         };
         
 
@@ -88,6 +88,18 @@ namespace AdventureGame
             foreach (string item in Inventory)
             {
                 Console.WriteLine(" -> " + item);
+            }
+
+            if (Inventory.Contains("50 dollar bill"))
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine(); // breakline
+                Console.WriteLine(" *** Congratulations you accomplished the goal! You found some money and an awesome babe, nice!");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.WriteLine("\n\n *** But you didn't find any money, terrible!");
             }
         }
 
@@ -229,9 +241,5 @@ namespace AdventureGame
             }
         }
        
-
-
-
-
     }
 }

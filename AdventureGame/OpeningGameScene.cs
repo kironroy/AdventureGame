@@ -17,7 +17,7 @@ namespace AdventureGame
         public static void ArtTitle()
         {
             
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             
             Console.Title = "ASCII Art";
             Console.WriteLine(); // breakline
@@ -38,7 +38,7 @@ namespace AdventureGame
 
             Console.WriteLine(title);
             Console.WriteLine(); // breakline
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("                                                     Press enter to continue...");
             Console.ReadKey();
             Console.Clear();
