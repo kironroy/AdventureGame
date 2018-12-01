@@ -28,7 +28,7 @@ namespace AdventureGame
 
             Name = Items[number];
             Description = Descriptions[number];
-            Console.Write($"\n *** In addition, you found {Name} {Description} \n");
+            CenterText.centerText($"\n *** In addition, you found {Name} {Description} \n");
         }
         
     }

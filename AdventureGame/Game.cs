@@ -21,12 +21,12 @@ namespace AdventureGame
         public static void CharacterName()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Choose the name of your character");
+            CenterText.centerText("Choose the name of your character");
             characterName = Console.ReadLine().Trim().ToLower();
             characterNameProper = new CultureInfo("en-US").TextInfo.ToTitleCase(characterName);
             Console.Clear();
 
-            Console.WriteLine($"Hello {characterNameProper}");
+            CenterText.centerText($"Hello {characterNameProper}");
             Console.WriteLine(); // breakline
         }
 
@@ -69,7 +69,7 @@ namespace AdventureGame
         {
             //Console.ForegroundColor = ConsoleColor.Green;
             
-            Console.WriteLine("A roleplaying game");
+            CenterText.centerText("A roleplaying game");
             Console.WriteLine(); // breakline
             CharacterName(); // calling CharacterName method
             Choice(); // calling Choice method
@@ -80,26 +80,26 @@ namespace AdventureGame
             //end of game text
 
             Console.WriteLine();
-            Console.WriteLine($" *** Congratulations {characterNameProper} *** ");
+            CenterText.centerText($" *** Congratulations {characterNameProper} *** ");
             Console.WriteLine(); // breakline
 
-            Console.WriteLine($" *** You found some items in your journey:");
+            CenterText.centerText($" *** You found some items in your journey:");
             Console.WriteLine(); // breakline
             foreach (string item in Inventory)
             {
-                Console.WriteLine(" -> " + item);
+                CenterText.centerText(" -> " + item);
             }
 
             if (Inventory.Contains("50 dollar bill"))
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(); // breakline
-                Console.WriteLine(" *** Congratulations you accomplished the goal! You found some money and an awesome babe, nice!");
+                CenterText.centerText(" *** Congratulations you accomplished the goal! You found some money and an awesome babe, nice!");
                 Console.ResetColor();
             }
             else
             {
-                Console.WriteLine("\n\n *** But you didn't find any money, terrible!");
+               CenterText.centerText("\n\n *** But you didn't find any money, terrible!");
             }
         }
 
@@ -117,10 +117,10 @@ namespace AdventureGame
 
                         //same pattern for each of the sections. 1) print the first part of the section
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(PartOne[0]); // accessing first element in PartOne Array
+                        CenterText.centerText(PartOne[0]); // accessing first element in PartOne Array
 
                         //2)read in player's choice (a or b)
-                        Console.Write("Enter your choice: ");
+                        CenterText.centerText("Enter your choice: ");
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
                        
@@ -128,33 +128,33 @@ namespace AdventureGame
                         //3) if a print the next part of the array, otherwise skip next and print 3rd
                         if (input == "a") // 
                         {
-                            Console.WriteLine(PartOne[1]);
+                            CenterText.centerText(PartOne[1]);
                             Inventory.Add("flashlight");
 
                         }
                         else
                         {
-                            Console.WriteLine(PartOne[2]);
+                            CenterText.centerText(PartOne[2]);
                             Inventory.Add("umbrella");
                         }
 
                         //4) print next part of the section
-                        Console.WriteLine(PartOne[3]);
+                        CenterText.centerText(PartOne[3]);
 
                         //5) again if a print next, otherwise skip ahead
                         if (input == "a")
                         {
-                            Console.WriteLine(PartOne[4]);
+                            CenterText.centerText(PartOne[4]);
                             Inventory.Add("snack");
 
                         }
                         else
                         {
-                            Console.WriteLine(PartOne[5]);
+                            CenterText.centerText(PartOne[5]);
                         }
 
                         //6) print last piece of the section
-                        Console.WriteLine(PartOne[6]);
+                        CenterText.centerText(PartOne[6]);
 
 
 
@@ -163,66 +163,66 @@ namespace AdventureGame
                     case 2:
                         //Part Two
                         Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine(PartTwo[0]);
-                        Console.Write("Enter your choice: ");
+                        CenterText.centerText(PartTwo[0]);
+                        CenterText.centerText("Enter your choice: ");
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
                      
                         if (input == "a")
                         {
-                            Console.WriteLine(PartTwo[1]);
+                            CenterText.centerText(PartTwo[1]);
                             Inventory.Add("50 dollar bill");
 
                         }
                         else
                         {
-                            Console.WriteLine(PartTwo[2]);
+                            CenterText.centerText(PartTwo[2]);
                             Inventory.Add("shirt button");
                         }
-                        Console.WriteLine(PartTwo[3]);
+                        CenterText.centerText(PartTwo[3]);
                         if (input == "a")
                         {
-                            Console.WriteLine(PartTwo[4]);
+                            CenterText.centerText(PartTwo[4]);
 
                         }
                         else
                         {
-                            Console.WriteLine(PartTwo[5]);
+                            CenterText.centerText(PartTwo[5]);
                         }
-                        Console.WriteLine(PartTwo[6]);
+                        CenterText.centerText(PartTwo[6]);
 
                         break;
 
                     case 3:
                         //Part Three
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        Console.WriteLine(PartThree[0]);
-                        Console.Write("Enter your choice: ");
+                        CenterText.centerText(PartThree[0]);
+                        CenterText.centerText("Enter your choice: ");
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
                     
                         if (input == "a")
                         {
-                            Console.WriteLine(PartThree[1]);
+                            CenterText.centerText(PartThree[1]);
                             Inventory.Add("sulfuric acid");
 
                         }
                         else
                         {
-                            Console.WriteLine(PartThree[2]);
+                            CenterText.centerText(PartThree[2]);
                             Inventory.Add("ping pong paddles");
                         }
-                        Console.WriteLine(PartThree[3]);
+                        CenterText.centerText(PartThree[3]);
                         if (input == "a")
                         {
-                            Console.WriteLine(PartThree[4]);
+                            CenterText.centerText(PartThree[4]);
 
                         }
                         else
                         {
-                            Console.WriteLine(PartThree[5]);
+                            CenterText.centerText(PartThree[5]);
                         }
-                        Console.WriteLine(PartThree[6]);
+                        CenterText.centerText(PartThree[6]);
                         break;
 
                     default:
@@ -232,7 +232,7 @@ namespace AdventureGame
 
                 //let player advance when ready, then clear the screen
                 Console.WriteLine(); // breakline
-                Console.WriteLine("Press enter to continue...");
+                CenterText.centerText("Press enter to continue...");
                 Console.ReadKey();
                 Console.Clear();
 

@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+﻿using System;
 
 // http://programmingisfun.com/learn/c-sharp-adventure-game/
 // 1. class Program
@@ -10,21 +10,19 @@
 
 namespace AdventureGame
 {
-    class Program
+    class CenterText
     {
-        static void Main()
+        public static void centerText(string message)
         {
+            int screenWidth = Console.WindowWidth;
+            int stringWidth = message.Length;
+            int spaces = (screenWidth / 2) + (stringWidth / 2);
 
-            OpeningGameScene.ArtTitle();
+            Console.WriteLine("\n");
 
-            Game.StartGame();  // class Game . operator  using Start Game method
 
-            Game.EndGame();
-
-            var items = new Item();
-
-            EndingGameScene.EndTitle();
-
+            Console.WriteLine(message.PadLeft(spaces));
         }
+
     }
 }
