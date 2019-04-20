@@ -48,7 +48,7 @@ namespace AdventureGame
             "\n\nYou choose the stairs, you find a useless shirt button", // choice B result
             "This place is so werid!",
             "The third floor has a International buffet, lucky you have a $50 dollar bill. \nthe buffet is only 10 bucks!",
-            "Too bad you chose to the stairs, there was smell of delicious close the ladder",
+            "Too bad you chose to the stairs, there was smell of delicious food close the ladder",
             "Anyway, you are headed to the fourth floor"
             
             

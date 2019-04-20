@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-// http://programmingisfun.com/learn/c-sharp-adventure-game/
+﻿// http://programmingisfun.com/learn/c-sharp-adventure-game/
 // 1. class Program
 // 2. class Console -> WriteLine is a method of console class 
 // This work is a derivative of
