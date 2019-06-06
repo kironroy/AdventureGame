@@ -12,6 +12,7 @@ namespace AdventureGame
     {
         static void Main()
         {
+            // init the game below this
             MainGame game = new MainGame();
 
             OpeningGameScene.ArtTitle();
