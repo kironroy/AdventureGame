@@ -11,11 +11,10 @@ namespace AdventureGame
     public class Item
     {
         //default is a stone
-        public string Name = "Acorn";
-        public string Description = "pointless.";
-
-        string[] Items = { "night", "a compass", "a swiss" };
-        string[] Descriptions = { "vison glasses", "with a mirror", "army knife" };
+        public string name = "Acorn";
+        public string description = "pointless.";
+        readonly List<string> items = new List<string> { "night", "a compass", "a swiss" };
+        readonly List<string> descriptions = new List<string> { "vison glasses", "with a mirror", "army knife" };
 
         public Item() // ctor contsructor
         {
@@ -24,11 +23,11 @@ namespace AdventureGame
             int number;
 
             //Next(Int32) returns a non-negative random number less than the maximum
-            number = randomNumber.Next(Items.Length);
+            number = randomNumber.Next(items.Count);
 
-            Name = Items[number];
-            Description = Descriptions[number];
-            CenterText.centerText($"\n *** In addition, you found {Name} {Description} \n");
+            name = items[number];
+            description = descriptions[number];
+            CenterText.centerText($"\n *** In addition, you found {name} {description} \n");
         }
         
     }

@@ -12,12 +12,13 @@ namespace AdventureGame
     {
         static void Main()
         {
+            MainGame game = new MainGame();
 
             OpeningGameScene.ArtTitle();
 
-            Game.StartGame();  // class Game . operator  using Start Game method
+            game.StartGame();  
 
-            Game.EndGame();
+            game.EndGame();
 
             var items = new Item();
 

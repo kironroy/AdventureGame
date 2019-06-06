@@ -41,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameScenes\CenterText.cs" />
-    <Compile Include="Game.cs" />
+    <Compile Include="GameFormatting\ConsoleHelpers.cs" />
+    <Compile Include="GameFormatting\CenterText.cs" />
+    <Compile Include="MainGame.cs" />
     <Compile Include="GameScenes\EndingGameScene.cs" />
     <Compile Include="GameScenes\OpeningGameScene.cs" />
     <Compile Include="Item.cs" />
