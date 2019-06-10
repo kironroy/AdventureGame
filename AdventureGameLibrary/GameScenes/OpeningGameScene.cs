@@ -40,6 +40,7 @@ namespace AdventureGame
             Console.WriteLine(); // breakline
             Console.ForegroundColor = ConsoleColor.Blue;
             CenterText.centerText("Press enter to continue...");
+            Console.ResetColor();
             Console.ReadKey();
             Console.Clear();
 

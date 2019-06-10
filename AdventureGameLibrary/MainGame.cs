@@ -25,7 +25,11 @@ namespace AdventureGame
             characterNameProper = new CultureInfo("en-US").TextInfo.ToTitleCase(characterName);
             Console.Clear();
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             CenterText.centerText($"Hello {characterNameProper}");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
             "".PrintToConsole(); // breakline
         }
 
@@ -34,9 +38,10 @@ namespace AdventureGame
         //print out game title and overview
         public void StartGame()
         {
-            //Console.ForegroundColor = ConsoleColor.Green;
 
             CenterText.centerText("A roleplaying game");
+            Console.ResetColor();
+
             "".PrintToConsole(); // breakline
             CharacterName(); // calling CharacterName method
             Choice(); // calling Choice method
@@ -46,27 +51,40 @@ namespace AdventureGame
         {
             //end of game text
 
-            Console.WriteLine();
-            CenterText.centerText($" *** Congratulations {characterNameProper} *** ");
-            "".PrintToConsole(); // breakline
+            if (inventory.Contains("sulfuric acid"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                CenterText.centerText($"The recently deceased {characterNameProper} has left behind these items:");
+                Console.ResetColor();
+            }
 
-            CenterText.centerText($" *** You found some items in your journey:");
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                "".PrintToConsole();
+                CenterText.centerText($" *** Congratulations {characterNameProper} you found some items on your journey: ");
+                "".PrintToConsole(); // breakline
+            }
+
             "".PrintToConsole(); // breakline
             foreach (string item in inventory)
             {
-                CenterText.centerText(" -> " + item);
+                "".PrintToConsole();
+                CenterText.centerText($" - {item}");
             }
 
-            if (inventory.Contains("50 dollar bill"))
+            if (inventory.Contains("50 dollar bill") && inventory.Contains("sulfuric acid"))
             {
-                Console.ForegroundColor = ConsoleColor.Cyan;
                 "".PrintToConsole(); // breakline
-                CenterText.centerText(" *** Congratulations you accomplished the goal! You found some money and an awesome babe, nice!");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                CenterText.centerText($" and left behind 50 dollars");
                 Console.ResetColor();
             }
-            else
+            else if (inventory.Contains("50 dollar bill"))
             {
-                CenterText.centerText("\n\n *** But you didn't find any money, terrible!");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                CenterText.centerText("and you found 50 dollars!");
+                Console.ResetColor();
             }
         }
 
@@ -74,38 +92,38 @@ namespace AdventureGame
         {
             List<string> partOne = new List<string>
             {
-                "At the front of the imposing building you see a weathered old man with a cart.\nAs you near, you see the cart is filled with what looks like mostly junk and \nonly a few useful items. All you have on you is piece of a chalk.\nYou offer it to him, and he says he'll trade a flashlight or an umbrella for it.\n\n*** To choose, type either A for the flashlight, or B for the umbrella.",
-                "\nThe power in the building goes out - luckily you have a flashlight! \nYou move the light around and a large animal is frightened by the \nsudden brightness and takes off. As you move the light again, \nsomething glitters. You reach down and pick up a coin!\n",
-                "The power in the building goes out! As you move down the hallway \nyou hear what sounds like a large animal nearby. You move the \numbrella in a widening arc in front of you to scare it, \nand the animal skitters off.",
-                "The lights return and you move into a room at the end of the hall. \nThere is a vending machine.",
-                "Luckily you have that coin you found and you buy yourself a snack.",
-                "Too bad you don't have a coin on you,\nor you would have been able to get a snack.",
-                "You begin to climb the stairs to the next floor."
+                " \n At the front of the imposing building you see a weathered old man with a cart.\n As you near, you see the cart is filled with what looks like mostly junk and \n only a few useful items. All you have on you is piece of a chalk.\n You offer it to him, and he says he'll trade a flashlight or an umbrella for it.\n\n *** To choose, type either A for the flashlight, or B for the umbrella.",
+                " \n The power in the building goes out - luckily you have a flashlight! \n You move the light around and a large animal is frightened by the \n sudden brightness and takes off. As you move the light again, \n something glitters. You reach down and pick up a coin!\n ",
+                " The power in the building goes out! As you move down the hallway \n you hear what sounds like a large animal nearby. You move the \n umbrella in a widening arc in front of you to scare it, \n and the animal skitters off.",
+                " The lights return and you move into a room at the end of the hall. \n There is a vending machine.",
+                " Luckily you have that coin you found and you buy yourself a snack.",
+                " Too bad you don't have a coin on you,\n or you would have been able to get a snack.",
+                " You begin to climb the stairs to the next floor."
             };
 
 
 
             List<string> partTwo = new List<string>
             {
-                "The second floor has a black and white checkered floor the same staircase \nand a yellow ladder to another floor\nYou must choose to go up the ladder or use the stairs\n\n*** To choose, type either A to go up the ladder, or B go up the stairs",
-                "\nYou climb the ladder and are on the third floor\nYou find a $50 bill on the rung, awesome!", // choice A result
-                "\n\nYou choose the stairs, you find a useless shirt button", // choice B result
-                "This place is so werid!",
-                "The third floor has a International buffet, lucky you have a $50 dollar bill. \nthe buffet is only 10 bucks!",
-                "Too bad you chose to the stairs, there was smell of delicious close the ladder",
-                "Anyway, you are headed to the fourth floor"
+                " \n The second floor has a black and white checkered floor the same staircase \n and a yellow ladder to another floor\n You must choose to go up the ladder or use the stairs\n \n *** To choose, type either A to go up the ladder, or B go up the stairs",
+                " \n You climb the ladder and are on the third floor\n You find a $50 bill on the rung, awesome!", // choice A result
+                " \n\n You choose the stairs, you find a useless shirt button", // choice B result
+                " This place is so werid!",
+                " The third floor has a International buffet, lucky you have a $50 dollar bill. \n the buffet is only 10 bucks!",
+                " Too bad you chose to the stairs, there was smell of delicious close the ladder",
+                " Anyway, you are headed to the fourth floor"
             };
 
 
 
             List<string> partThree = new List<string>
             {
-                "Your on the fourth floor, where there is a pool and a ping pong table. \nDo wanna swim or play ping pong.\n\n*** To choose, Type A for pool B for ping pong",
-                "Your in the pool, its sulfuric acid",
-                "\n\nYou see there are two paddles and a ball, you gonna play alone?",
+                " \n Your on the fourth floor, where there is a pool and a ping pong table. \nDo wanna swim or play ping pong.\n\n *** To choose, Type A for pool B for ping pong",
+                " \n Your in the pool, its sulfuric acid\n ",
+                " \n You see there are two paddles and a ball, you gonna play alone?",
                 " ",
-                "Sulfuric acid means death, YOU ARE DEAD!!!",
-                "No! You play ping pong with an awesome babe ;)",
+                " Sulfuric acid means death, YOU ARE DEAD!!!\n ",
+                " No! You play ping pong with an awesome babe ;)",
                 " "
             };
 
@@ -120,12 +138,11 @@ namespace AdventureGame
                         //Part One
 
                         //same pattern for each of the sections. 1) print the first part of the section
-                        Console.ForegroundColor = ConsoleColor.Green;
                         partOne[0].PrintToConsole(); // accessing first element in PartOne Array
 
                         //2)read in player's choice (a or b)
                         "".PrintToConsole(); // breakline
-                        "Enter your choice: ".PrintToConsole();
+                        " Enter your choice: ".PrintToConsole();
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
 
@@ -171,9 +188,8 @@ namespace AdventureGame
 
                     case 2:
                         //Part Two
-                        Console.ForegroundColor = ConsoleColor.Blue;
                         partTwo[0].PrintToConsole();
-                        "Enter your choice: ".PrintToConsole();
+                        " Enter your choice: ".PrintToConsole();
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
 
@@ -204,9 +220,8 @@ namespace AdventureGame
 
                     case 3:
                         //Part Three
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         partThree[0].PrintToConsole();
-                        "Enter your choice: ".PrintToConsole();
+                        " Enter your choice: ".PrintToConsole();
                         input = Console.ReadLine();
                         input = input.Trim().ToLower();
 
@@ -241,7 +256,7 @@ namespace AdventureGame
 
                 //let player advance when ready, then clear the screen
                 "".PrintToConsole(); // breakline
-                "Press enter to continue...".PrintToConsole();
+                " Press enter to continue...".PrintToConsole();
                 Console.ReadKey();
                 Console.Clear();
 

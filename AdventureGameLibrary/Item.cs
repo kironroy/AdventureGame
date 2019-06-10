@@ -27,7 +27,9 @@ namespace AdventureGame
 
             name = items[number];
             description = descriptions[number];
-            CenterText.centerText($"\n *** In addition, you found {name} {description} \n");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            CenterText.centerText($"\n random item found: {name} {description} \n");
+            Console.ResetColor();
         }
         
     }
